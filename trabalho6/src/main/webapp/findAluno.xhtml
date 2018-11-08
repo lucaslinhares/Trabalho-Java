@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui">
+<h:head>
+<title>Procura aluno</title>
+
+</h:head>
+<h:body>
+<h2>Procura por matrícula</h2>
+<br />
+<h:form>
+<h:dataTable id="findAlunos" value="#{alunoController.alunos}" var="aluno">
+<h:column>
+<table>
+<tr>
+<td>Matrícula:</td>
+<td><h:inputText id="matricula" size="10"
+value="#{alunoController.matricula}" /></td>
+</tr>
+<f:facet name = "header">Matrícula</f:facet>
+#{aluno.matricula}
+</h:column>
+<h:column>
+<f:facet name = "header">Nome</f:facet>
+#{aluno.nome}
+</h:column>
+
+</h:dataTable>
+<h:commandLink value="Voltar" onclick="history.go(-1)"/>
+</h:form>
+</h:body>
+</html>
